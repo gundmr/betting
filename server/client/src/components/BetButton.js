@@ -19,7 +19,7 @@ class BetButton extends React.Component {
                     onClick={
                         this.toggleModal
                     }
-                >Place Bet
+                >Bet Now
           </button>
                 <Modal
                     toggle={this.toggleModal}

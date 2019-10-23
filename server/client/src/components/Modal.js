@@ -1,17 +1,10 @@
 import React from "react";
 
 class Modal extends React.Component {
-    componentDidMount() {
-    }
-
-    dismissModal = () => {
-        this.props.toggle()
-    }
 
     render() {
         return (
             <div
-                onClick={this.dismissModal}
                 className={`modal fade BettingModal ${this.props.showModal ? 'show' : ''}`}
                 style={{
                     display: `${this.props.showModal ? 'block' : 'none'}`,
@@ -29,6 +22,7 @@ class Modal extends React.Component {
                             <p className="text-center">
                                 In increments of 100 credits, please place your bet...Good luck, Gamer!
                             </p>
+                            <button onClick={this.props.toggle}>close</button>
                         </div>
                     </div>
                 </div>
