@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 //import { BrowserRouter, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from './actions';
+
+
 import AppNavbar from './components/AppNavBar/AppNavbar';
 //import Modal from './components/Modal';
 import { Container } from 'reactstrap';
@@ -9,6 +13,11 @@ import BetButton from './components/BetButton';
 import "./App.css";
 
 class App extends Component {
+  //use lifecycle method to see if user is signed in
+  componentDidMount() {
+    this.props.fetchUser();
+  }
+
   render() {
     return (
       <div className="App">
@@ -28,4 +37,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(null, actions) (App);
