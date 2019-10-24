@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 //import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import * as actions from './actions';
+import * as actions from '../actions';
 
 
-import AppNavbar from './components/AppNavBar/AppNavbar';
-//import Modal from './components/Modal';
+import AppNavbar from '../components/AppNavBar/AppNavbar';
 import { Container } from 'reactstrap';
-import Footer from './components/Footer';
-import BetButton from './components/BetButton';
+import Footer from '../components/Footer';
+// import BetButton from './components/BetButton';
+//import Modal from './components/Modal';
 
 import "./App.css";
 
@@ -26,9 +26,8 @@ class App extends Component {
         <Container>
         {/* <Modal /> */}
         {/* <HomePage /> */}
-        <BetButton></BetButton>
-        {/* <a href="/auth/google"> Sign in With Google</a> */}
-
+        {/* <BetButton></BetButton> */}
+        
         </Container>
         <Footer />
 
