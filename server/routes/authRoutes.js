@@ -11,12 +11,19 @@ module.exports = app => {
     );
 
     //Exchange code for actual user profile; put user on hold, take 'code' from the URL
-    app.get('/auth/google/callback', passport.authenticate('google'));
+    app.get(
+        '/auth/google/callback', 
+        passport.authenticate('google'), 
+        (req, res) => {
+            //update to /home
+            res.redirect('/home');
+        }
+    );
 
     app.get('/api/logout', (req, res) => {
         // will kill the cookies in session
         req.logout();
-        res.send(req.user); //will give response: undefined/no conent
+        res.redirect('/');
     });
 
     app.get('/api/current_user', (req, res) => {

@@ -47,7 +47,7 @@ app.use(passport.session());
 require('./routes/authRoutes')(app);
 
 // adding dynamic port for heroku deployment
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, function() {
     console.log(`🌎 ==> API server now on port ${PORT}!`);
 });

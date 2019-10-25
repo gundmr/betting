@@ -1,39 +1,56 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import BetButton from '../BetButton';
 
-//import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar'; 
-import Nav from 'react-bootstrap/Nav'; 
-// import NavDropdown from 'react-bootstrap/NavDropdown';
-// import Form from 'react-bootstrap/Form';
-// import Button from 'react-bootstrap/Button';
-// import FormControl from 'react-bootstrap/FormControl';
 
-function Navigation(){
+import {
+  Navbar,
+  NavbarBrand,
+  NavLink,
+  Container
+} from 'reactstrap';
+
+// import Navbar from 'react-bootstrap/Navbar'; 
+// import NavbarBrand from 'react-bootstrap/NavbarBrand'; 
+
+class Navigation extends Component {
+  renderContent() {
+    switch(this.props.auth){
+      case null:
+        return;
+      case false:
+        return (
+          <Container>
+              <NavbarBrand href="/">BETS</NavbarBrand>
+              <NavLink href="/auth/google">Sign In</NavLink>
+          </Container>
+        );
+      default:
+        return(
+          <Container>
+              <NavbarBrand href="/">BETS</NavbarBrand>
+              <BetButton />
+              <NavLink href="/api/logout">Logout</NavLink>
+          </Container>
+        );
+    }
+  }
+
+  render() {
+    console.log(this.props);
     return(
-<Navbar bg="light" expand="lg">
-  <Navbar.Brand href="/">Big Bets</Navbar.Brand>
-  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-  <Navbar.Collapse id="basic-navbar-nav">
-    <Nav className="mr-auto">
-      <Nav.Link href="/auth/google">Sign In</Nav.Link>
-      <Nav.Link href="#link">Find Games</Nav.Link>
-      <Nav.Link href="#link">Buy Credits</Nav.Link>
-      {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-      </NavDropdown> */}
-    </Nav>
-    {/* <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-success">Search</Button>
-    </Form> */}
-  </Navbar.Collapse>
-</Navbar>
-    );
-}
+      <Navbar color="dark" dark expand="sm" className="mb-5">
+        {this.renderContent()}
 
+      </Navbar>
 
-export default Navigation;
+        
+      );
+    }
+  };
+
+  function mapStateToProps({ auth }){
+    return { auth };
+  }
+
+export default connect(mapStateToProps) (Navigation);
