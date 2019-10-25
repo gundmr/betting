@@ -16,7 +16,7 @@ module.exports = app => {
         passport.authenticate('google'), 
         (req, res) => {
             //update to /home
-            res.redirect('/');
+            res.redirect('/home');
         }
     );
 

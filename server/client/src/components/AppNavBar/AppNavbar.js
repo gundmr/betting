@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import BetButton from '../BetButton'
+import BetButton from '../BetButton';
+
 
 import {
   Navbar,
   NavbarBrand,
   NavLink,
-  NavItem,
   Container
 } from 'reactstrap';
 
@@ -20,14 +20,18 @@ class Navigation extends Component {
         return;
       case false:
         return (
-          <NavLink href="/auth/google">Sign In</NavLink>
+          <Container>
+              <NavbarBrand href="/">BETS</NavbarBrand>
+              <NavLink href="/auth/google">Sign In</NavLink>
+          </Container>
         );
       default:
         return(
-          <div>
-            <NavLink href="/api/logout">Logout</NavLink>
-            <BetButton />
-          </div>
+          <Container>
+              <NavbarBrand href="/">BETS</NavbarBrand>
+              <BetButton />
+              <NavLink href="/api/logout">Logout</NavLink>
+          </Container>
         );
     }
   }
@@ -36,15 +40,11 @@ class Navigation extends Component {
     console.log(this.props);
     return(
       <Navbar color="dark" dark expand="sm" className="mb-5">
-
-        <Container>
-          <NavbarBrand href="/">BETS</NavbarBrand>
-            <NavItem>
-              <NavLink>{this.renderContent()}</NavLink>
-            </NavItem>
-        </Container>
+        {this.renderContent()}
 
       </Navbar>
+
+        
       );
     }
   };
