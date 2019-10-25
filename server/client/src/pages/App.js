@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-//import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import * as actions from '../actions';
@@ -10,6 +10,8 @@ import { Container } from 'reactstrap';
 import Footer from '../components/Footer';
 // import BetButton from './components/BetButton';
 //import Modal from './components/Modal';
+import SignIn from '../components/SignIn';
+import Home from '../components/Home';
 
 import API from "../utils/API";
 import "./App.css";
@@ -25,12 +27,17 @@ class App extends Component {
       <div className="App">
 
         <AppNavbar />
-        <Container>
-        {/* <Modal /> */}
-        {/* <HomePage /> */}
-        {/* <BetButton></BetButton> */}
-        
-        </Container>
+          <Container>
+            <BrowserRouter>
+              <div>
+                <Route exact path="/" component={SignIn} />
+                <Route exact path="/home" component={Home} />
+                    {/* <Modal /> */}
+                    {/* <HomePage /> */}
+                    {/* <BetButton></BetButton> */}
+              </div>
+            </BrowserRouter>
+          </Container>
         <Footer />
 
       </div>
