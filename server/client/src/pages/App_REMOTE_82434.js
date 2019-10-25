@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 //import { BrowserRouter, Route } from 'react-router-dom';
-
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
@@ -11,7 +10,6 @@ import Footer from '../components/Footer';
 // import BetButton from './components/BetButton';
 //import Modal from './components/Modal';
 
-import API from "../utils/API";
 import "./App.css";
 
 class App extends Component {
@@ -33,7 +31,7 @@ class App extends Component {
         </Container>
         <Footer />
 
-      </div>
+    </div>
     );
   }
 }

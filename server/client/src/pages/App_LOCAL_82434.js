@@ -1,35 +1,25 @@
 import React, { Component } from "react";
 //import { BrowserRouter, Route } from 'react-router-dom';
-
-import { connect } from 'react-redux';
-import * as actions from '../actions';
-
-
 import AppNavbar from '../components/AppNavBar/AppNavbar';
+//import Modal from './components/Modal';
 import { Container } from 'reactstrap';
 import Footer from '../components/Footer';
-// import BetButton from './components/BetButton';
-//import Modal from './components/Modal';
-
+import BetButton from '../components/BetButton';
 import API from "../utils/API";
+
 import "./App.css";
 
 class App extends Component {
-  //use lifecycle method to see if user is signed in
-  componentDidMount() {
-    this.props.fetchUser();
-  }
-
   render() {
     return (
       <div className="App">
 
         <AppNavbar />
         <Container>
-        {/* <Modal /> */}
-        {/* <HomePage /> */}
-        {/* <BetButton></BetButton> */}
-        
+          {/* <Modal /> */}
+          {/* <HomePage /> */}
+          <BetButton></BetButton>
+          {/* <a href="/auth/google"> Sign in With Google</a> */}
         </Container>
         <Footer />
 
@@ -38,4 +28,4 @@ class App extends Component {
   }
 }
 
-export default connect(null, actions) (App);
+export default App;
