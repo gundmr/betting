@@ -5,11 +5,26 @@ import AppNavbar from '../components/AppNavBar/AppNavbar';
 import { Container } from 'reactstrap';
 import Footer from '../components/Footer';
 import BetButton from '../components/BetButton';
-import API from "../utils/API";
-
 import "./App.css";
+import Tournaments from "../components/Tournaments";
 
 class App extends Component {
+
+  // state = {
+  //   tournaments: [],
+  // };
+
+  // // componentDidMount() {
+  // //   API.getCurrentLeagueTournament()
+  // //     .then(res =>
+  // //       this.setState({ tournaments: res.data })
+  // //     )
+  // //     .catch(err => console.log(err));
+  // //   // this.state.tournaments.maps( tournament => (tournament.data.slug))
+  // //   // console.log(tournament);
+  // // }
+
+
   render() {
     return (
       <div className="App">
@@ -19,6 +34,7 @@ class App extends Component {
           {/* <Modal /> */}
           {/* <HomePage /> */}
           <BetButton></BetButton>
+          <Tournaments></Tournaments>
           {/* <a href="/auth/google"> Sign in With Google</a> */}
         </Container>
         <Footer />
