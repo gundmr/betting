@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 //import { BrowserRouter, Route } from 'react-router-dom';
- HEAD:server/client/src/pages/App.js
+<<<<<<< HEAD:server/client/src/pages/App.js
 import AppNavbar from '../components/AppNavBar/AppNavbar';
 //import Modal from './components/Modal';
 import { Container } from 'reactstrap';
