@@ -30,7 +30,6 @@ mongoose
 const app = express();
 
 
-
 app.use(
     cookieSession ({
         //maxAge: how long cookie can last in browser before expiring (below saying 30days)
