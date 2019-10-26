@@ -6,10 +6,8 @@ import AppNavbar from '../components/AppNavBar/AppNavbar';
 import { Container } from 'reactstrap';
 import Footer from '../components/Footer';
 import SignIn from '../components/SignIn';
-import Home from '../components/Home';
-import "./App.css";
-import Tournaments from "../components/Tournaments";
-// import Bracket from "../components/Bracket/Bracket";
+import Home from '../pages/Home';
+import Bracket from '../pages/Bracket';
 
 class App extends Component {
   //use lifecycle method to see if user is signed in
@@ -19,30 +17,22 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-
-        <AppNavbar />
+      <BrowserRouter>
+        <div className="App">
+          <AppNavbar />
           <Container>
-            <BrowserRouter>
-              <div>
-                {/* LANDNG PAGE TELL YOU TO SIGN IN */}
-                <Route exact path="/" component={SignIn} />
-
-                {/* PAGE YOU GET ONCE YOU SIGN IN */}
-                <Route exact path="/home" component={Home} />
-
-                {/* BRACKET ROUTE */}
-                {/* <Route exact path="/bracket" component={Bracket} />  */}
-
-              </div>
-            </BrowserRouter>
-            <Tournaments></Tournaments>
+            <div>
+              <Route exact path="/" component={SignIn} />
+              <Route exact path="/home" component={Home} />
+              <Route exact path="/home/:tournament" component={Bracket} />
+            </div>
           </Container>
-        <Footer />
+          <Footer />
 
-      </div>
+        </div>
+      </BrowserRouter>
     );
   }
 }
 
-export default connect(null, actions) (App);
+export default connect(null, actions)(App);
