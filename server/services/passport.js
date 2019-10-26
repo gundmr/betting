@@ -39,7 +39,7 @@ passport.use
         } 
         
         // we dont have a user with this ID make a new record
-        const user = await new User({ googleId: profile.id}).save() //take model instance and save to DB
+        const user = await new User({ googleId: profile.id, points: 10000}).save() //take model instance and save to DB
         done(null, user);
         }
     )
