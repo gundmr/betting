@@ -1,16 +1,20 @@
 import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Matches from '../components/Matches/Matches';
 
-function BracketCard(props){
+function BracketCard(props) {
 
-            return (
-                <div className="card" onClick={() => props.click(props.id)}>
-                    <div className="img-container">
-                        <img alt={props.name} src={props.image} />
-                        vs
-                        <img alt={props.name} src={props.image} />
-                    </div>
-                </div>
-            );
+    return (
+        <div className="mt-5">
+            <Container fluid={true}>
+                <Row className="justify-content-center p-3">
+                    <p>Welcome to Big Bets</p>
+                </Row>
+                <Matches />
+            </Container>
+        </div>
+    );
 }
 
 export default BracketCard;

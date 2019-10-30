@@ -26,7 +26,6 @@ class App extends Component {
               <Route exact path="/home/:tournament" component={Bracket} />
             </div>
           <Footer />
-
         </div>
       </BrowserRouter>
     );
