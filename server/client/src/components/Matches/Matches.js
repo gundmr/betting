@@ -9,7 +9,7 @@ class Matches extends React.Component {
     };
 
     componentDidMount() {
-        API.getCurrentMatches()
+        API.getCurrentMatches(window.location.pathname.split("/")[2])
             .then(res =>
                 this.setState({ matches: res.data })
             )
@@ -25,7 +25,7 @@ class Matches extends React.Component {
                             <ListItem key={match.slug}>
                                 <Link to={"/" + match.slug}>
                                     <strong>
-                                    {match.name.replace(/-/g, ' ')}
+                                        {match.name.replace(/-/g, ' ')}
                                     </strong>
                                 </Link>
                             </ListItem>
