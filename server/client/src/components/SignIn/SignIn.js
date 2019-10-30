@@ -1,6 +1,6 @@
 import React from 'react';
 import "./style.css";
-import logo from "../../assets/ebetz-main.png"
+import logo from "../../assets/ebetz2.png"
 
 import desktopImage from '../../assets/scales.jpg';
 import mobileImage from '../../assets/scales.jpg';
@@ -14,7 +14,7 @@ const SignIn = () => {
             <div className="overlay">
                 <img className="img-logo" src={logo} alt="Logo" />;
                 <h1>Sign in to Bet</h1>
-                <p>New Users Recieve 10k Points</p>
+                <p>New Users Receive 10k Points</p>
             </div>
         </div>
     );
