@@ -11,7 +11,7 @@ const SignIn = () => {
     return (
         
         <div className="header" style={{backgroundImage: `url(${imageUrl})` }}>
-            <div className="App-Mode">
+            <div className="overlay">
                 <img className="img-logo" src={logo} alt="Logo" />;
                 <h1>Sign in to Bet</h1>
                 <p>New Users Recieve 10k Points</p>
