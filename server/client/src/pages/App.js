@@ -3,9 +3,9 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import AppNavbar from '../components/AppNavBar/AppNavbar';
-import { Container } from 'reactstrap';
+//import { Container } from 'reactstrap';
 import Footer from '../components/Footer';
-import SignIn from '../components/SignIn';
+import SignIn from '../components/SignIn/SignIn';
 import Home from '../pages/Home';
 import Bracket from '../pages/Bracket';
 
@@ -20,13 +20,11 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <AppNavbar />
-          <Container>
             <div>
               <Route exact path="/" component={SignIn} />
               <Route exact path="/home" component={Home} />
               <Route exact path="/home/:tournament" component={Bracket} />
             </div>
-          </Container>
           <Footer />
 
         </div>

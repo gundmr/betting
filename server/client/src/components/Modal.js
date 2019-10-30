@@ -51,6 +51,7 @@ class Modal extends React.Component {
 
                             <button className="btn btn-warning" onClick={this.props.toggle}>Place Bet</button>
                             <button className="btn btn-dark" onClick={this.props.toggle}>Close</button>
+
                         </div>
                     </div>
                 </div>
