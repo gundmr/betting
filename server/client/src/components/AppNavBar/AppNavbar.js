@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import BetButton from '../BetButton';
-
+import NavLogo from '../../assets/navlogo.png'
+import "./style.css";
 
 import {
   Navbar,
@@ -21,14 +22,32 @@ class Navigation extends Component {
       case false:
         return (
           <Container>
-              <NavbarBrand href="/">BETS</NavbarBrand>
+            <NavbarBrand href="/">
+              <img
+                src={NavLogo}
+                width="50"
+                height="50"
+                className="logo-img d-inline-block p-0 align-top"
+                alt="EB"
+              />
+            </NavbarBrand>
+
               <NavLink href="/auth/google">Sign In</NavLink>
           </Container>
         );
       default:
         return(
           <Container>
-              <NavbarBrand href="/">BETS</NavbarBrand>
+
+            <NavbarBrand href="/">
+              <img
+                src={NavLogo}
+                width="50"
+                height="50"
+                className="logo-img d-inline-block p-0 align-top"
+                alt="EB"
+              />
+            </NavbarBrand>
               <BetButton />
               <NavLink href="/api/logout">Logout</NavLink>
           </Container>
@@ -39,7 +58,7 @@ class Navigation extends Component {
   render() {
     console.log(this.props);
     return(
-      <Navbar color="dark" dark expand="sm" className="mb-5">
+      <Navbar color="light" light expand="sm" className="mb-0 p-0">
         {this.renderContent()}
 
       </Navbar>

@@ -1,0 +1,17 @@
+.navbar{
+    border-bottom: 4px solid #000000;
+    box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.7);
+}
+
+.logo-img {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+a.nav-link{
+    color: black;
+    font-weight: 900;
+}
+
+.navbar-light .navbar-brand{
+    padding: 0rem 0.5rem;
+}

@@ -1,0 +1,52 @@
+
+.img-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin: auto;
+  padding-top: 5%;
+  text-align:  center;
+  border-bottom: 4px solid #000000;
+  box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.7);
+}
+
+.header {
+    background: url("../../assets/scales.jpg") no-repeat center center fixed / cover;
+    height: 400px;
+    margin: 0;
+    z-index: 0;
+    border-bottom: 1px solid #000000;
+    box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.7);
+  }
+  
+  .header h1 {
+    margin: auto;
+    padding-top: 10px;
+    text-align: center;
+    color:white;
+    font-size: 2rem;
+    font-weight: 900;
+  }
+
+  .header p {
+    margin: auto;
+    padding-top: 0px;
+    text-align: center;
+    color:white;
+    font-size: 1rem;
+  }
+
+  #CFB53B
+
+
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+  }

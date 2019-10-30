@@ -49,7 +49,7 @@ class Modal extends React.Component {
                                 Good Luck Gamer!
                             </p>
 
-                            <button class="btn btn-warning" onClick={this.props.toggle}>Place Bet</button>
+                            <button class="btn btn-warning place-bet" onClick={this.props.toggle}>Place Bet</button>
                             <button class="btn btn-dark" onClick={this.props.toggle}>Close</button>
                         </div>
                     </div>
