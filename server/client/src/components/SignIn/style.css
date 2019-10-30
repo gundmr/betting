@@ -1,8 +1,7 @@
 
 .img-logo {
-  clip-path: ellipse(250px 100px 250px at center);
   display: block;
-  width: 75%;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
   margin: auto;
