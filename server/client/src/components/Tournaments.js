@@ -25,7 +25,7 @@ class Tournaments extends React.Component {
                             <ListItem key={tournament.slug}>
                                 <Link to={"/home/" + tournament.slug}>
                                     <strong>
-                                        {tournament.slug}
+                                        {tournament.slug.replace(/-/g, ' ')}
                                     </strong>
                                 </Link>
                             </ListItem>
