@@ -3,8 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Matches from '../components/Matches/Matches';
 
-function BracketCard(props) {
-
+function BracketCard() {
     return (
         <div className="mt-5">
             <Container fluid={true}>
