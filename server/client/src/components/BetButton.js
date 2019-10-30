@@ -15,7 +15,7 @@ class BetButton extends React.Component {
             <div
                 className={`container ${this.state.showModal ? 'modal-open' : ''}`}>
                 <button
-                    className="btn btn-primary"
+                    className="btn btn-warning"
                     onClick={
                         this.toggleModal
                     }

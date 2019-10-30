@@ -19,9 +19,9 @@ class Modal extends React.Component {
                             </div>
                         </div>
                         <div className="modal-body col-sm-6">
-                            <form class="form-inline">
-                                <label class="my-1 mr-2" for="inlineFormCustomSelectPref"></label>
-                                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                            <form className="form-inline">
+                                <label className="my-1 mr-2" for="inlineFormCustomSelectPref"></label>
+                                <select className="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
                                     <option selected>Choose Tournament</option>
                                     <option value="1">LeagueofLegends1</option>
                                     <option value="2">LeagueofLegends2</option>
@@ -38,19 +38,20 @@ class Modal extends React.Component {
                                 Type in your wager below:
                             </p>
 
-                            <div class="input-group mb-3 col-sm-12">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">$</span>
+                            <div className="input-group mb-3 col-sm-12">
+                                <div className="input-group-prepend">
+                                    <span className="input-group-text">$</span>
                                 </div>
-                                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" />
+                                <input type="text" className="form-control" aria-label="Amount (to the nearest dollar)" />
                             </div>
 
                             <p className="text-center">
                                 Good Luck Gamer!
                             </p>
 
-                            <button class="btn btn-warning place-bet" onClick={this.props.toggle}>Place Bet</button>
-                            <button class="btn btn-dark" onClick={this.props.toggle}>Close</button>
+                            <button className="btn btn-warning" onClick={this.props.toggle}>Place Bet</button>
+                            <button className="btn btn-dark" onClick={this.props.toggle}>Close</button>
+
                         </div>
                     </div>
                 </div>
