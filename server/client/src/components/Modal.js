@@ -18,11 +18,40 @@ class Modal extends React.Component {
                                 <h5 className="modal-title" id="ModalLabel">Ladies & Gentlemen, Place Your Bets!</h5>
                             </div>
                         </div>
-                        <div className="modal-body">
+                        <div className="modal-body col-sm-6">
+                            <form className="form-inline">
+                                <label className="my-1 mr-2" for="inlineFormCustomSelectPref"></label>
+                                <select className="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                    <option selected>Choose Tournament</option>
+                                    <option value="1">LeagueofLegends1</option>
+                                    <option value="2">LeagueofLegends2</option>
+                                    <option value="3">LeagueofLegends3</option>
+                                    <option value="3">LeagueofLegends4</option>
+                                    <option value="3">LeagueofLegends5</option>
+                                    <option value="3">LeagueofLegends6</option>
+                                    <option value="3">LeagueofLegends7</option>
+                                    <option value="3">LeagueofLegends8</option>
+                                </select>
+                            </form>
+
                             <p className="text-center">
-                                In increments of 100 credits, please place your bet...Good luck, Gamer!
+                                Type in your wager below:
                             </p>
-                            <button onClick={this.props.toggle}>close</button>
+
+                            <div className="input-group mb-3 col-sm-12">
+                                <div className="input-group-prepend">
+                                    <span className="input-group-text">$</span>
+                                </div>
+                                <input type="text" className="form-control" aria-label="Amount (to the nearest dollar)" />
+                            </div>
+
+                            <p className="text-center">
+                                Good Luck Gamer!
+                            </p>
+
+                            <button className="btn btn-warning" onClick={this.props.toggle}>Place Bet</button>
+                            <button className="btn btn-dark" onClick={this.props.toggle}>Close</button>
+
                         </div>
                     </div>
                 </div>
