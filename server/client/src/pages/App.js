@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import SignIn from '../components/SignIn/SignIn';
 import Home from '../pages/Home';
 import Bracket from '../pages/Bracket';
+import Game from "../pages/Game";
 
 class App extends Component {
   //use lifecycle method to see if user is signed in
@@ -24,6 +25,7 @@ class App extends Component {
               <Route exact path="/" component={SignIn} />
               <Route exact path="/home" component={Home} />
               <Route path = "/tournament/:tournament" component={Bracket} />
+              <Route path = "/game" component={Game}/>
             </div>
           <Footer />
         </div>

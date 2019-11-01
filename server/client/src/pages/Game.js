@@ -3,7 +3,9 @@ import Twitch from "../components/Twitch";
 
 function Game() {
     return (
+      <div>
 <Twitch/>
+    </div>
     );
 }
 
