@@ -6,8 +6,8 @@ import Row from 'react-bootstrap/Row';
 function Footer() {
 
     return(
-        <footer className="mt-0">
-            <Container fluid={true}> 
+        <footer className="fixed-bottom">
+            <Container> 
                 <Row className="justify-content-center p-3">
                     <p>Copyright &copy;</p>
                 </Row>
