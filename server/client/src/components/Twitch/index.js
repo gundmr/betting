@@ -1,7 +1,7 @@
 import React from "react";
 import TwitchEmbedVideo from "react-twitch-embed-video"
 
-function Match() {
+function Twitch() {
     return (
         <TwitchEmbedVideo
             autoplay
@@ -16,4 +16,4 @@ function Match() {
     );
 }
 
-export default Match;
+export default Twitch;
