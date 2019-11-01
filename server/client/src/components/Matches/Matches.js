@@ -9,10 +9,10 @@ class Matches extends React.Component {
     };
 
     componentDidMount() {
-        API.getCurrentMatches(window.location.pathname.split("/")[2])
+        API.getCurrentMatches(this.props.matchName)
             .then(res =>
                 this.setState({ matches: res.data })
-            )
+        )
             .catch(err => console.log(err));
     };
 

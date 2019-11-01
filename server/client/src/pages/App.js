@@ -23,7 +23,7 @@ class App extends Component {
             <div>
               <Route exact path="/" component={SignIn} />
               <Route exact path="/home" component={Home} />
-              <Route exact path="/home/:tournament" component={Bracket} />
+              <Route path = "/tournament/:tournament" component={Bracket} />
             </div>
           <Footer />
         </div>
