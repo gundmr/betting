@@ -23,8 +23,8 @@ class Matches extends React.Component {
                     <List>
                         {this.state.matches.map(match => (
                             <ListItem key={match.slug}>
-                                <Link to={"/" + match.slug}>
-                                    <strong>
+                                <Link to={"/tournament/" + match.tournament.slug + "/" + match.slug}>
+                                    <strong className="Matches">
                                         {match.name.replace(/-/g, ' ')}
                                     </strong>
                                 </Link>
