@@ -23,7 +23,7 @@ class Tournaments extends React.Component {
                     <List>
                         {this.state.tournaments.map(tournament => (
                             <ListItem key={tournament.slug}>
-                                <Link to={"/home/" + tournament.slug}>
+                                <Link to={"/tournament/" + tournament.slug}>
                                     <strong>
                                         {tournament.slug.replace(/-/g, ' ')}
                                     </strong>
