@@ -34,7 +34,7 @@ class Modal extends React.Component {
                                 </select>
                             </form>
 
-                            <p className="text-center">
+                            <p className="text-center wager-amt">
                                 Type in your wager below:
                             </p>
 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import BetButton from '../BetButton';
 import NavLogo from '../../assets/navlogo.png'
 import "./style.css";
 
@@ -48,7 +47,6 @@ class Navigation extends Component {
                 alt="EB"
               />
             </NavbarBrand>
-              <BetButton />
               <NavLink href="/api/logout">Logout</NavLink>
           </Container>
         );

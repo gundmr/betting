@@ -1,0 +1,27 @@
+.TeamContainer{
+    text-align:center;    
+}
+
+.Team1{
+color: #FFFFFF;
+text-shadow: 3px 5px 2px #474747;
+font-size: 20px;
+
+}
+
+
+.Team2{
+    color: #FFFFFF;
+    text-shadow: 3px 5px 2px #474747;
+    font-size:20px;
+    
+}
+
+.Container{
+    margin-top: 10px;
+}
+
+.BetBtnContainer{
+    margin-top: 10px;
+    text-align: center;
+}
