@@ -38,7 +38,7 @@ class Navigation extends Component {
         return(
           <Container>
 
-            <NavbarBrand href="/">
+            <NavbarBrand href="/home">
               <img
                 src={NavLogo}
                 width="50"
@@ -47,6 +47,7 @@ class Navigation extends Component {
                 alt="EB"
               />
             </NavbarBrand>
+              <NavLink>Points: {this.props.auth.points} </NavLink>
               <NavLink href="/api/logout">Logout</NavLink>
           </Container>
         );
