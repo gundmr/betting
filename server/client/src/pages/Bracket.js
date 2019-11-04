@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import Matches from '../components/Matches/Matches';
+import Image from '../assets/matches.jpeg';
+
 
 class BracketCard extends Component {
     
@@ -12,6 +14,12 @@ class BracketCard extends Component {
         return (
             <div className="mt-5">
                 <Container fluid={true}>
+                    <img 
+                            className="img-tourn" 
+                            src={Image} 
+                            alt="Logo" 
+                            style={{disply: "flex",
+                                    width: "100%"}} />
                     <Matches matchName={this.state.url} />
                 </Container>
             </div>
