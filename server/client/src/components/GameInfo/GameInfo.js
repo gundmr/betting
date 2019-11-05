@@ -20,18 +20,12 @@ class GameInfo extends React.Component {
                 this.setState({ games: res.data })
             )
             .catch(err => console.log(err));
-    };
-
-    getPlayersForTeam1(team1) {
-        API.getPlayersFromTeam(team1)
+        API.getPlayersFromTeam(this.state.games.opponents[0].opponent.slug)
             .then(res =>
                 this.setState({ players1: res.data.players })
             )
             .catch(err => console.log(err));
-    };
-
-    getPlayersForTeam2(team2) {
-        API.getPlayersFromTeam(team2)
+        API.getPlayersFromTeam(this.state.games.opponents[1].opponent.slug)
             .then(res =>
                 this.setState({ players2: res.data.players })
             )
@@ -66,7 +60,6 @@ class GameInfo extends React.Component {
                                         image={this.state.games.opponents[1].opponent.image_url}
                                         />
                                     {this.state.games.opponents[0].opponent.name}
-                                    {this.getPlayersForTeam1(this.state.games.opponents[0].opponent.slug)}
                                 </strong>
                             </ListItem>
                             {this.state.players1.length ? (
@@ -89,7 +82,6 @@ class GameInfo extends React.Component {
                             <ListItem>
                                 <strong>
                                     {this.state.games.opponents[1].opponent.name}
-                                    {this.getPlayersForTeam2(this.state.games.opponents[1].opponent.slug)}
                                 </strong>
                             </ListItem>
                             {this.state.players2.length ? (
