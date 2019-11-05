@@ -10,28 +10,26 @@ import TeamImage from "../TeamImage";
 class GameInfo extends React.Component {
     state = {
         games: [],
+        team1: [],
+        team2: [],
         players1: [],
         players2: [],
     };
 
     componentDidMount() {
-        API.getCurrentGame(this.props.gameName)
-            .then(res =>
-                this.setState({ games: res.data })
+        API.getCurrentGame(this.props.gameName).then(res =>
+            this.setState({ games: res.data, team1: res.data.opponents[0].opponent.slug, team2: res.data.opponents[1].opponent.slug },
+                () => {
+                    API.getPlayersFromTeam(this.state.team1).then(res =>
+                        this.setState({ players1: res.data.players })
+                    )
+                    API.getPlayersFromTeam(this.state.team2).then(res =>
+                        this.setState({ players2: res.data.players })
+                    )
+                }
             )
-            .catch(err => console.log(err));
-        API.getPlayersFromTeam(this.state.games.opponents[0].opponent.slug)
-            .then(res =>
-                this.setState({ players1: res.data.players })
-            )
-            .catch(err => console.log(err));
-        API.getPlayersFromTeam(this.state.games.opponents[1].opponent.slug)
-            .then(res =>
-                this.setState({ players2: res.data.players })
-            )
-            .catch(err => console.log(err));
+        ).catch(err => console.log(err))
     };
-
 
     render() {
 
@@ -55,10 +53,10 @@ class GameInfo extends React.Component {
                     <Row>
                         <Col>
                             <ListItem>
-                                <strong>
                                 <TeamImage
-                                        image={this.state.games.opponents[1].opponent.image_url}
-                                        />
+                                    image={this.state.games.opponents[0].opponent.image_url}
+                                />
+                                <strong>
                                     {this.state.games.opponents[0].opponent.name}
                                 </strong>
                             </ListItem>
@@ -75,11 +73,14 @@ class GameInfo extends React.Component {
                                     ))}
                                 </div>
                             ) : (
-                                    <h3>Searching For All Current Tournaments</h3>
+                                    <h3>Searching For All Players</h3>
                                 )}
                         </Col>
                         <Col>
                             <ListItem>
+                                <TeamImage
+                                    image={this.state.games.opponents[1].opponent.image_url}
+                                />
                                 <strong>
                                     {this.state.games.opponents[1].opponent.name}
                                 </strong>
@@ -97,7 +98,7 @@ class GameInfo extends React.Component {
                                     ))}
                                 </div>
                             ) : (
-                                    <h3>Searching For All Current Tournaments</h3>
+                                    <h3>Searching For Players</h3>
                                 )}
                         </Col>
                     </Row>

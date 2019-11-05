@@ -1,5 +1,5 @@
 import axios from "axios";
-const keys = require('./config/keys');
+const keys = require("../config/keys");
 const apiKey = keys.pandaKey;
 
 export default {
