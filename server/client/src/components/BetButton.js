@@ -1,5 +1,5 @@
 import React from "react";
-import Modal from "./Modal";
+import Modal from "./Modal/Modal.js";
 
 class BetButton extends React.Component {
     state = {
@@ -14,8 +14,7 @@ class BetButton extends React.Component {
         return (
             <div
                 className={`container ${this.state.showModal ? 'modal-open' : ''}`}>
-                <button
-                    className="btn btn-warning"
+                <button className="btn btn-warning" style={{ background: '#CFB53B', borderWidth: '2px', borderColor: '#CFB53B',  color: 'white' }}
                     onClick={
                         this.toggleModal
                     }
