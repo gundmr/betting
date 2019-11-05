@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import TeamImage from "../TeamImage";
 
 class GameInfo extends React.Component {
     state = {
@@ -24,8 +25,8 @@ class GameInfo extends React.Component {
         if (!this.state.games.opponents) {
             return <span>Loading...</span>;
         }
-        // // var first = this.state.games.opponents[0];
-        // console.log(first);
+        var first = this.state.games.opponents[0];
+        console.log(first);
         return (
             <div>
                 <Container>
@@ -38,6 +39,9 @@ class GameInfo extends React.Component {
                                 <ListItem>
                                     <strong>
                                         {this.state.games.opponents[0].opponent.name}
+                                        <TeamImage
+                                        image={this.state.games.opponents[0].opponent.image_url}
+                                        />
                                     </strong>
                                 </ListItem>
                             </List>
@@ -47,6 +51,9 @@ class GameInfo extends React.Component {
                                 <ListItem>
                                     <strong>
                                         {this.state.games.opponents[1].opponent.name}
+                                        <TeamImage
+                                        image={this.state.games.opponents[1].opponent.image_url}
+                                        />
                                     </strong>
                                 </ListItem>
                             </List>
