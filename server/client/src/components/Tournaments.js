@@ -2,6 +2,7 @@ import React from "react";
 import API from '../utils/API'
 import { List, ListItem } from "../components/List/index";
 import { Link } from "react-router-dom";
+import Container from 'react-bootstrap/Container';
 
 class Tournaments extends React.Component {
     state = {
@@ -20,7 +21,7 @@ class Tournaments extends React.Component {
         return (
             <div>
                 {this.state.tournaments.length ? (
-                    <List>
+                    <Container>
                         {this.state.tournaments.map(tournament => (
                             <ListItem key={tournament.slug}>
                                 <Link to={"/tournament/" + tournament.slug}>
@@ -30,7 +31,7 @@ class Tournaments extends React.Component {
                                 </Link>
                             </ListItem>
                         ))}
-                    </List>
+                    </Container>
                 ) : (
                         <h3>Searching For All Current Tournaments</h3>
                     )}

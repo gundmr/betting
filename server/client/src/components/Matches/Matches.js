@@ -2,6 +2,7 @@ import React from "react";
 import API from '../../utils/API'
 import { List, ListItem } from "../List/index";
 import { Link } from "react-router-dom";
+import Container from 'react-bootstrap/Container';
 
 class Matches extends React.Component {
     state = {
@@ -20,7 +21,7 @@ class Matches extends React.Component {
         return (
             <div>
                 {this.state.matches.length ? (
-                    <List>
+                    <Container>
                         {this.state.matches.map(match => (
                             <ListItem key={match.slug}>
                                 <Link to={"/tournament/" + match.tournament.slug + "/" + match.slug}>
@@ -30,7 +31,7 @@ class Matches extends React.Component {
                                 </Link>
                             </ListItem>
                         ))}
-                    </List>
+                    </Container>
                 ) : (
                         <h3>Searching For All Matches</h3>
                     )}
