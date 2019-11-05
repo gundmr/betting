@@ -62,6 +62,9 @@ class GameInfo extends React.Component {
                         <Col>
                             <ListItem>
                                 <strong>
+                                <TeamImage
+                                        image={this.state.games.opponents[1].opponent.image_url}
+                                        />
                                     {this.state.games.opponents[0].opponent.name}
                                     {this.getPlayersForTeam1(this.state.games.opponents[0].opponent.slug)}
                                 </strong>
