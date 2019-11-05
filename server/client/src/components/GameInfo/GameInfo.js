@@ -10,6 +10,8 @@ import TeamImage from "../TeamImage";
 class GameInfo extends React.Component {
     state = {
         games: [],
+        players1: [],
+        players2: [],
     };
 
     componentDidMount() {
@@ -19,6 +21,23 @@ class GameInfo extends React.Component {
             )
             .catch(err => console.log(err));
     };
+
+    getPlayersForTeam1(team1) {
+        API.getPlayersFromTeam(team1)
+            .then(res =>
+                this.setState({ players1: res.data.players })
+            )
+            .catch(err => console.log(err));
+    };
+
+    getPlayersForTeam2(team2) {
+        API.getPlayersFromTeam(team2)
+            .then(res =>
+                this.setState({ players2: res.data.players })
+            )
+            .catch(err => console.log(err));
+    };
+
 
     render() {
 
@@ -30,37 +49,65 @@ class GameInfo extends React.Component {
         return (
             <div>
                 <Container>
-                    <strong class="gameName">
-                        {this.state.games.name}
-                    </strong>
                     <Row>
                         <Col>
-                            <List>
-                                <ListItem>
-                                    <strong>
-                                        {this.state.games.opponents[0].opponent.name}
-                                        <TeamImage
-                                        image={this.state.games.opponents[0].opponent.image_url}
-                                        />
-                                    </strong>
-                                </ListItem>
-                            </List>
-                        </Col>
-                        <Col>
-                            <List>
-                                <ListItem>
-                                    <strong>
-                                        {this.state.games.opponents[1].opponent.name}
-                                        <TeamImage
-                                        image={this.state.games.opponents[1].opponent.image_url}
-                                        />
-                                    </strong>
-                                </ListItem>
-                            </List>
+                            <strong class="gameName, row justify-content-md-center">
+                                {this.state.games.name}
+                            </strong>
                         </Col>
                     </Row>
                 </Container>
-            </div>
+                <Container>
+                    <Row>
+                        <Col>
+                            <ListItem>
+                                <strong>
+                                    {this.state.games.opponents[0].opponent.name}
+                                    {this.getPlayersForTeam1(this.state.games.opponents[0].opponent.slug)}
+                                </strong>
+                            </ListItem>
+                            {this.state.players1.length ? (
+                                <div>
+                                    {this.state.players1.map(player1 => (
+                                        <ListItem key={player1.slug}>
+                                            <Link to={"/players/" + player1.slug}>
+                                                <strong>
+                                                    {player1.slug.replace(/-/g, ' ')}
+                                                </strong>
+                                            </Link>
+                                        </ListItem>
+                                    ))}
+                                </div>
+                            ) : (
+                                    <h3>Searching For All Current Tournaments</h3>
+                                )}
+                        </Col>
+                        <Col>
+                            <ListItem>
+                                <strong>
+                                    {this.state.games.opponents[1].opponent.name}
+                                    {this.getPlayersForTeam2(this.state.games.opponents[1].opponent.slug)}
+                                </strong>
+                            </ListItem>
+                            {this.state.players2.length ? (
+                                <div>
+                                    {this.state.players2.map(player2 => (
+                                        <ListItem key={player2.slug}>
+                                            <Link to={"/players/" + player2.slug}>
+                                                <strong>
+                                                    {player2.slug.replace(/-/g, ' ')}
+                                                </strong>
+                                            </Link>
+                                        </ListItem>
+                                    ))}
+                                </div>
+                            ) : (
+                                    <h3>Searching For All Current Tournaments</h3>
+                                )}
+                        </Col>
+                    </Row>
+                </Container>
+            </div >
         );
     }
 }
