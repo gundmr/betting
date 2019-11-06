@@ -1,6 +1,8 @@
 import React from "react";
 import Modal from "./Modal/Modal.js";
 
+
+
 class BetButton extends React.Component {
     state = {
         showModal: false,
