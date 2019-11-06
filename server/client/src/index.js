@@ -11,6 +11,10 @@ import registerServiceWorker from "./registerServiceWorker";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./index.css";
 
+// Development only axios helpers!
+import axios from 'axios';
+window.axios = axios;
+
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
 ReactDOM.render(
