@@ -29,9 +29,6 @@ class Twitch extends React.Component {
                                     targetClass="twitch-embed"
                                 />
                             </ResponsiveEmbed>
-                            <div className="BetBtnContainer">
-                                <BetButton />
-                            </div>
                         </Col>
                         <Col lg={3} className="TeamContainer">
                             <div className="Team2">

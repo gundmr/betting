@@ -26,8 +26,8 @@ class Modal extends React.Component {
                                     <label className="my-1 mr-2" for="inlineFormCustomSelectPref">Choose Team:</label>
                                     <select className="custom-select" id="inlineFormCustomSelectPref">
                                         <option selected>Select Match</option>
-                                        <option value="1">Team 1</option>
-                                        <option value="2">Team 2</option>
+                                        <option value="1">{this.props.teamName1}</option>
+                                        <option value="2">{this.props.teamName2}</option>
                                     </select>
                                 </div>
 
