@@ -6,19 +6,23 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import TeamImage from "../TeamImage";
+import "./style.css";
+import BetButton from "../BetButton";
 
 class GameInfo extends React.Component {
     state = {
         games: [],
         team1: [],
+        teamName1: [],
         team2: [],
+        teamName2: [],
         players1: [],
         players2: [],
     };
 
     componentDidMount() {
         API.getCurrentGame(this.props.gameName).then(res =>
-            this.setState({ games: res.data, team1: res.data.opponents[0].opponent.slug, team2: res.data.opponents[1].opponent.slug },
+            this.setState({ games: res.data, team1: res.data.opponents[0].opponent.slug, team2: res.data.opponents[1].opponent.slug, teamName1: res.data.opponents[0].opponent.name, teamName2: res.data.opponents[1].opponent.name },
                 () => {
                     API.getPlayersFromTeam(this.state.team1).then(res =>
                         this.setState({ players1: res.data.players })
@@ -41,15 +45,13 @@ class GameInfo extends React.Component {
         return (
             <div>
                 <Container>
-                    <Row>
-                        <Col>
-                            <strong class="gameName, row justify-content-md-center">
-                                {this.state.games.name}
-                            </strong>
+                    <Row className="row justify-content-md-center">
+                        <Col className="text-center">
+                            <div className="BetBtnContainer">
+                                <BetButton teamName1={this.state.teamName1} teamName2={this.state.teamName2} />
+                            </div>
                         </Col>
                     </Row>
-                </Container>
-                <Container>
                     <Row>
                         <Col>
                             <ListItem>

@@ -3,11 +3,15 @@ import Modal from "./Modal/Modal.js";
 
 class BetButton extends React.Component {
     state = {
-        showModal: false
+        showModal: false,
+        teamName1: [],
+        teamName2: []
     }
 
     toggleModal = () => this.setState({
-        showModal: !this.state.showModal
+        showModal: !this.state.showModal,
+        teamName1: this.props.teamName1,
+        teamName2: this.props.teamName2
     })
 
     render() {
@@ -23,6 +27,8 @@ class BetButton extends React.Component {
                 <Modal
                     toggle={this.toggleModal}
                     showModal={this.state.showModal}
+                    teamName1={this.state.teamName1}
+                    teamName2={this.state.teamName2}
                 />
             </div>
         );

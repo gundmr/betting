@@ -1,0 +1,9 @@
+.container {
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-text {
+    margin-top: 15px;   
+    margin-bottom: 15px;
+}
