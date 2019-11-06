@@ -47,7 +47,7 @@ class Navigation extends Component {
                 alt="EB"
               />
             </NavbarBrand>
-              <NavLink>Points: {this.props.auth.points} </NavLink>
+              {/* <NavLink>Points: {this.props.auth.points} </NavLink> */}
               <NavLink href="/api/logout">Logout</NavLink>
           </Container>
         );

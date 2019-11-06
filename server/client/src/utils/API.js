@@ -17,5 +17,17 @@ export default {
 
   getPlayersFromTeam: function(team) {
     return axios.get("https://cors-anywhere.herokuapp.com/https://api.pandascore.co/teams/"+team+"?token="+apiKey);
+  },
+
+  // Get current user
+  getUser: function() {
+    return axios.get("/api/current_user/");
+  },
+
+  //save bet
+  saveBet: function(betPoint) {
+		return axios.post('/api/bet', betPoint);
   }
+
+
 };

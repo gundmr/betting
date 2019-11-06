@@ -1,7 +1,65 @@
-import React from "react";
-import "../Modal/modal.css";
+import React from 'react';
+
+//USE REDUX ACTIONS
+//import API from '../../actions/index';  //should move to routes?
+//import { FETCH_USER } from '../actions/types'; //use?
+
+//using UTILS >> API
+import API from '../../utils/API';
+
+import { Input } from 'reactstrap';
 
 class Modal extends React.Component {
+	state = {
+		points: '',
+		betPoints: ''
+	};
+
+	//MAYBE DONT NEED?
+	componentDidMount() {
+		this.loadUser();
+	}
+
+	// // Loads all betPoints  and sets them to this.state.betPoints
+	loadUser = () => {
+		API.getUser()
+			.then((res) => this.setState({ points: res.data.points, betPoints: '' }))
+			.catch((err) => console.log(err));
+	};
+
+	//HANDLES BET AMT IN MODAL
+	// Handles updating component state when the user types into the input field
+	handleInputChange = (event) => {
+		const { name, value } = event.target;
+		this.setState({
+			[name]: value
+		});
+	};
+
+	//HANDLES SUBMIT FROM BUTTONS
+	// When the form is submitted, use the API.saveBet method to save the bet
+	// Then reload betPoints from the database
+	handleFormSubmit = (event, res) => {
+		event.preventDefault();
+		if (this.state.betPoints) {
+			const totalPoints = this.state.points - this.state.betPoints;
+            console.log(totalPoints);
+            
+            this.setState({
+				points: totalPoints
+			});
+
+			// this.loadUser();
+			API.saveBet({
+				betPoints: this.state.betPoints
+			});
+			API.saveBet({
+				points: totalPoints
+			})
+				.then((res) => totalPoints)
+				.catch((err) => console.log(err));
+		}
+	};
 
     render() {
 
@@ -36,7 +94,13 @@ class Modal extends React.Component {
                                     <div className="input-group-prepend">
                                         <span className="input-group-text">$</span>
                                     </div>
-                                    <input type="text" className="form-control" aria-label="Amount (to the nearest dollar)" />
+                                    <Input
+										value={this.state.betPoints}
+										onChange={this.handleInputChange}
+										name="betPoints"
+										placeholder="Amount (to the nearest dollar)"
+									/>
+                                    
                                 </div>
                             </div>
 
@@ -45,30 +109,44 @@ class Modal extends React.Component {
                                     {/* <p className="text-center mt-2">
                                         Good Luck Gamer!
                                     </p> */}
-                                </div>
+								</div>
 
-                                <div className="col-sm-6">
-                                    <div className="row">
-                                        <div className='col-sm-6'>
-                                            <button className="btn modal-button"
-                                                onClick={this.props.toggle}>Place Bet</button>
-                                        </div>
+								<div className="col-sm-6">
+									<div className="row">
+										<div className="col-sm-6">
+											{/* <button className="btn modal-button" onClick={this.props.toggle}>
+												Place Bet
+											</button> */}
+											<button disabled={!this.state.betPoints} onClick={this.handleFormSubmit}>
+												Place Bet
+											</button>
+										</div>
 
-                                        <div className='col-sm-6'>
-                                            <button className="btn modal-button" style={{ background: '#CFB53B', borderWidth: '2px', borderColor: '#CFB53B', color: 'white', width: 
-                                            '100%', padding: '5px 0' }}
-                                                onClick={this.props.toggle}>Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        )
-    }
+										<div className="col-sm-6">
+											<button
+												className="btn modal-button"
+												style={{
+													background: '#CFB53B',
+													borderWidth: '2px',
+													borderColor: '#CFB53B',
+													color: 'white',
+													width: '100%',
+													padding: '5px 0'
+												}}
+												onClick={this.props.toggle}
+											>
+												Close
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		);
+	}
 }
 
 export default Modal;

@@ -11,3 +11,11 @@ export const fetchUser = () => async dispatch => {
     //res is the output from axios
     dispatch({ type: FETCH_USER, payload: res.data });
 };
+
+//not sure what to put for 'value' - need to id onclickSubmit from model
+// export const saveBet = (value) => async (dispatch) => {
+// 	const res = await axios.post('/api/bet', value);
+
+// 	//update user model inside action reduceer
+// 	dispatch({ type: FETCH_USER, payload: res.data });
+// };
