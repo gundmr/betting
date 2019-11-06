@@ -14,26 +14,19 @@ class Twitch extends React.Component {
             <div>
                 <Container fluid={true} className="Container">
                     <Row>
-                        <Col lg={3} className="TeamContainer">
-                            <div className="Team1">
-                                Team 1
-                        </div>
+                    <Col lg={1} className="TeamContainer">
                         </Col>
-                        <Col lg={6}>
+                        <Col lg={10}>
                             <ResponsiveEmbed aspectRatio="16by9">
                                 <TwitchEmbedVideo
                                     autoplay
                                     channel="riotgames"
-                                    layout="video"
                                     muted={true}
                                     targetClass="twitch-embed"
                                 />
                             </ResponsiveEmbed>
                         </Col>
-                        <Col lg={3} className="TeamContainer">
-                            <div className="Team2">
-                                Team 2
-                        </div>
+                        <Col lg={1} className="TeamContainer">
                         </Col>
                     </Row>
                 </Container>
