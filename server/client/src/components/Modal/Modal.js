@@ -75,7 +75,8 @@ class Modal extends React.Component {
                         <div className="modal-header">
                             <div className="camera-box">
                                 <img alt="" src="/img/yellow-logo.svg" />
-                                <h5 className="modal-title" id="ModalLabel">Place your Bet!</h5>
+                                <h5 className="modal-title" id="ModalLabel">
+                                    You have <strong> {this.state.points} </strong> to Bet</h5>
                             </div>
                         </div>
                         <div className="modal-body col-sm-12">
@@ -117,7 +118,19 @@ class Modal extends React.Component {
 											{/* <button className="btn modal-button" onClick={this.props.toggle}>
 												Place Bet
 											</button> */}
-											<button disabled={!this.state.betPoints} onClick={this.handleFormSubmit}>
+                                            <button 
+                                                disabled={!this.state.betPoints} 
+                                                onClick={this.handleFormSubmit}
+                                                className="btn modal-button"
+												style={{
+													background: '#CFB53B',
+													borderWidth: '2px',
+													borderColor: '#CFB53B',
+													color: 'white',
+													width: '100%',
+													padding: '5px 0'
+												}}
+                                                >
 												Place Bet
 											</button>
 										</div>
