@@ -1,7 +1,7 @@
 
 .img-logo {
   display: block;
-  width: 45%;
+  width: 75%;
   margin-left: auto;
   margin-right: auto;
   margin: auto;
@@ -13,7 +13,7 @@
 
 .header {
     background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) );
-    height: 500px;
+    height: 100%;
     margin: 0;
     background-repeat: no-repeat;
     z-index: 0;
@@ -36,6 +36,10 @@
     text-align: center;
     color:white;
     font-size: 1rem;
+  }
+
+  .row {
+    margin-top: 75px;
   }
 
   /* background: url("../../assets/scales.jpg") no-repeat center center fixed / cover; */

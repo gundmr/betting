@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import TeamImage from "../TeamImage";
+import "./style.css";
 import BetButton from "../BetButton";
 
 class GameInfo extends React.Component {
@@ -44,18 +45,13 @@ class GameInfo extends React.Component {
         return (
             <div>
                 <Container>
-                    <Row>
-                        <Col>
-                            <strong class="gameName, row justify-content-md-center">
-                                {this.state.games.name}
-                            </strong>
+                    <Row className="row justify-content-md-center">
+                        <Col className="text-center">
                             <div className="BetBtnContainer">
-                                <BetButton teamName1={this.state.teamName1} teamName2={this.state.teamName2}/>
+                                <BetButton teamName1={this.state.teamName1} teamName2={this.state.teamName2} />
                             </div>
                         </Col>
                     </Row>
-                </Container>
-                <Container>
                     <Row>
                         <Col>
                             <ListItem>
