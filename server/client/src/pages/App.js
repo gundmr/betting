@@ -6,9 +6,9 @@ import AppNavbar from '../components/AppNavBar/AppNavbar';
 //import { Container } from 'reactstrap';
 import Footer from '../components/Footer/Footer';
 import SignIn from '../components/SignIn/SignIn';
-import Home from '../pages/Home';
-import Bracket from '../pages/Bracket';
-import Game from '../pages/Game';
+import Home from './Home/Home';
+import Bracket from './Bracket/Bracket';
+import Game from './Game';
 
 class App extends Component {
   //use lifecycle method to see if user is signed in

@@ -8,6 +8,7 @@ import Row from 'react-bootstrap/Row';
 import TeamImage from "../TeamImage";
 import "./style.css";
 import BetButton from "../BetButton";
+import PlayerImage from "../PlayerImage/index";
 
 class GameInfo extends React.Component {
     state = {
@@ -66,11 +67,14 @@ class GameInfo extends React.Component {
                                 <div>
                                     {this.state.players1.map(player1 => (
                                         <ListItem key={player1.slug}>
-                                            <Link to={"/players/" + player1.slug}>
-                                                <strong>
-                                                    {player1.slug.replace(/-/g, ' ')}
-                                                </strong>
-                                            </Link>
+                                            {/* <Link to={"/players/" + player1.slug}> */}
+                                            <PlayerImage
+                                                image={player1.image_url}
+                                            />
+                                            <strong>
+                                                {player1.slug.replace(/-/g, ' ')}
+                                            </strong>
+                                            {/* </Link> */}
                                         </ListItem>
                                     ))}
                                 </div>
@@ -91,11 +95,14 @@ class GameInfo extends React.Component {
                                 <div>
                                     {this.state.players2.map(player2 => (
                                         <ListItem key={player2.slug}>
-                                            <Link to={"/players/" + player2.slug}>
-                                                <strong>
-                                                    {player2.slug.replace(/-/g, ' ')}
-                                                </strong>
-                                            </Link>
+                                            {/* <Link to={"/players/" + player2.slug}> */}
+                                            <PlayerImage
+                                                image={player2.image_url}
+                                            />
+                                            <strong>
+                                                {player2.slug.replace(/-/g, ' ')}
+                                            </strong>
+                                            {/* </Link> */}
                                         </ListItem>
                                     ))}
                                 </div>
