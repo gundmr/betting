@@ -1,6 +1,6 @@
 import React from "react";
 import API from '../utils/API'
-import { List, ListItem } from "../components/List/index";
+import { ListItem } from "../components/List/index";
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 

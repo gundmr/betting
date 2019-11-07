@@ -1,0 +1,14 @@
+.container{
+    justify-content: center;
+ }
+ .btn{
+    width: 50%;
+    background: '#CFB53B';
+    border-Width: '2px';
+    border-Color: '#CFB53B';
+    color: 'white';
+ }
+ .btn:hover {
+    -webkit-box-shadow: 0px 0px 7px rgba(255,255,255,0.9);
+    box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.7);
+  }
